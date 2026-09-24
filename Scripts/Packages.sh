@@ -33,7 +33,7 @@ UPDATE_PACKAGE() {
 
 	# 克隆 GitHub 仓库
 	git clone --depth=1 --single-branch --branch $PKG_BRANCH "https://github.com/$PKG_REPO.git" $REPO_PATH
-
+	git clone --depth=1 --single-branch --branch v3.6.0 https://github.com/SunBK201/UA3F.git ./packag
 	# 处理克隆的仓库
 	if [[ "$PKG_SPECIAL" == "pkg" ]]; then
 		find $REPO_PATH/*/ -maxdepth 3 -type d -iname "*$PKG_NAME*" -prune -exec cp -rf {} ./package \;
