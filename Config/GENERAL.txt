@@ -1,8 +1,8 @@
 #切换firewall3
-CONFIG_DEFAULT_firewall4=n
-CONFIG_DEFAULT_firewall4=y
-CONFIG_MODULE_DEFAULT_firewall4=y
-CONFIG_MODULE_DEFAULT_firewall4=n
+#CONFIG_DEFAULT_firewall4=n
+#CONFIG_DEFAULT_firewall4=y
+#CONFIG_MODULE_DEFAULT_firewall4=y
+#CONFIG_MODULE_DEFAULT_firewall4=n
 # CONFIG_PACKAGE_firewall=y
 CONFIG_PACKAGE_firewall4=n
 #科学插件调整
