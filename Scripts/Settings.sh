@@ -48,7 +48,7 @@ if [[ "${WRT_CONFIG,,}" == *"wifi"* && "${WRT_CONFIG,,}" == *"no"* ]]; then
 fi
 # ===================== 防火墙：启用 firewall3(fw3 iptables)，禁用默认 firewall4 =====================
 # 取消firewall4，避免编译冲突
-echo "# CONFIG_PACKAGE_firewall4 is not set" >> ./.config
+echo "CONFIG_PACKAGE_firewall4 is not set" >> ./.config
 # 启用firewall3 + luci防火墙页面
 echo "CONFIG_PACKAGE_firewall=y" >> ./.config
 echo "CONFIG_PACKAGE_luci-app-firewall=y" >> ./.config
