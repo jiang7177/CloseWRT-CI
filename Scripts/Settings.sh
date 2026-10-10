@@ -2,6 +2,11 @@
 # SPDX-License-Identifier: MIT
 # Copyright (C) 2026 VIKINGYFY
 
+#彻底移除firewall4(nftables)，强制使用firewall3(iptables)
+find ./package ./feeds -maxdepth 5 -type d -name "firewall4" -exec rm -rf {} +
+#同时移除nftables-json(firewall4专属依赖)
+find ./package ./feeds -maxdepth 5 -type d -name "nftables-json" -exec rm -rf {} +
+
 #移除luci-app-attendedsysupgrade
 find ./feeds/luci/collections/ -type f -name "Makefile" -exec sed -i "/attendedsysupgrade/d" {} +
 #修改默认主题
