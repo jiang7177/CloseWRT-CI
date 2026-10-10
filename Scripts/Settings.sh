@@ -43,3 +43,11 @@ fi
 if [ -n "$WRT_PACKAGE" ]; then
 	echo -e "$WRT_PACKAGE" >> ./.config
 fi
+
+#强制切换firewall3：defconfig后清理被依赖拉回的firewall4及fw4专属组件
+make defconfig -j$(nproc)
+sed -i 's/^CONFIG_PACKAGE_firewall4=.*/# CONFIG_PACKAGE_firewall4 is not set/' .config
+sed -i 's/^CONFIG_PACKAGE_kmod-nft-tproxy=.*/# CONFIG_PACKAGE_kmod-nft-tproxy is not set/' .config
+sed -i 's/^CONFIG_PACKAGE_dnsmasq_full_nftset=.*/# CONFIG_PACKAGE_dnsmasq_full_nftset is not set/' .config
+echo "CONFIG_PACKAGE_dnsmasq_full_ipset=y" >> .config
+make defconfig -j$(nproc)
