@@ -3,7 +3,7 @@
 
 name: Cache-Clean
 
-#on:
+on:
   #自动清理：每周一早上4点
 #  schedule:
  #   - cron: 0 20 * * 0
